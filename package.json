@@ -19,7 +19,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/preset-typescript": "^7.23.2",
     "@types/react": "^18.2.28"
   }
 }
