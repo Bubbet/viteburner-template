@@ -3,7 +3,7 @@
     "module": "esnext",
     "target": "esnext",
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "@react/types"],
     "strict": true,
     "allowJs": true,
     "noEmit": true,
@@ -14,11 +14,12 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "jsx": "react",
     "paths": {
       "@/*": ["./src/*"],
       "/src/*": ["./src/*"],
       "@ns": ["./NetscriptDefinitions.d.ts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "NetscriptDefinitions.d.ts", "vite.config.ts", "vite.config.js"]
+  "include": ["src/**/*.tsx", "src/**/*.ts", "src/**/*.jsx", "src/**/*.js", "NetscriptDefinitions.d.ts", "vite.config.ts", "vite.config.js"]
 }

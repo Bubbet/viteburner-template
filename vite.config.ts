@@ -15,7 +15,7 @@ export default defineConfig({
     minify: false,
   },
   viteburner: {
-    watch: [{ pattern: 'src/**/*.{js,ts}', transform: true }, { pattern: 'src/**/*.{script,txt}' }],
+    watch: [{ pattern: 'src/**/*.{js,jsx,ts,tsx}', transform: true }, { pattern: 'src/**/*.{script,txt}' }],
     sourcemap: 'inline',
   },
 });
