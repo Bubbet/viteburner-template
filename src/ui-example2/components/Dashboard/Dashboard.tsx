@@ -3,18 +3,24 @@ import { MonitorInput } from './MonitorInput';
 import { ToggleSection } from './ToggleSection';
 
 import { NS } from '@ns';
-import React from 'react';
+import React, { useState } from 'react';
 
 export interface IDashboardProps {
   ns: NS;
 }
 export const Dashboard = ({ ns }: IDashboardProps) => {
+  const [message, setState] = useState('');
+  let timeout: ReturnType<typeof setTimeout> | undefined = undefined;
   const killAllClicked = async () => {
-    alert('Killing stuff');
+    setState('Killing stuff');
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => setState(''), 5000);
   };
 
   const runClicked = async () => {
-    alert('Running stuff');
+    setState('Running stuff');
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => setState(''), 5000);
   };
   return (
     <div
@@ -36,7 +42,7 @@ export const Dashboard = ({ ns }: IDashboardProps) => {
         <Button bg="red" title="Kill ME All!" onButtonClick={killAllClicked} />
         <Button bg="green" title="Run!" onButtonClick={runClicked} />
       </div>
-      <MonitorInput ns={ns} />
+      <MonitorInput ns={ns} message={message} />
       <ToggleSection ns={ns} />
     </div>
   );

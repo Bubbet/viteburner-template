@@ -7,7 +7,7 @@ const { useState, useMemo } = React;
 
 // This module lets you monitor a server's details (money, security, required threads for grow,weaken,hack etc).
 //It has a primitive auto - complete feature. Suggestions for server names will appear as you start typing.When there is 1 suggestion left pressing Enter will run a monitor for that server.
-export const MonitorInput = ({ ns }: { ns: NS }) => {
+export const MonitorInput = ({ ns, message }: { ns: NS; message: string }) => {
   const allServers = useMemo(() => getAllServers(ns), []);
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
@@ -51,6 +51,7 @@ export const MonitorInput = ({ ns }: { ns: NS }) => {
         fontSize: '12px',
       }}
     >
+      <div>{message}</div>
       <input
         style={{
           width: '100px',
