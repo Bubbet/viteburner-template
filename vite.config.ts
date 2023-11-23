@@ -9,6 +9,9 @@ export default defineConfig({
       '/src': resolve(__dirname, 'src'),
     },
   },
+  server: {
+    hmr: false,
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
